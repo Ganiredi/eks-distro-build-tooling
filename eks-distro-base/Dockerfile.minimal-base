@@ -67,7 +67,7 @@ ENV CA_CERTIFICATES_SCRIPTLET_REQS="/usr/bin/p11-kit /usr/bin/trust /usr/share/p
 
 # there is a circular dep between ca-certs and openssl, we do not include openssl in the base
 # and can safely remove these symlinks
-ENV CLEANUP_UNNECESSARY_FILES="/usr/lib/debug/usr/.dwz /etc/ssl/ct_log_list.cnf /etc/ssl/openssl.cnf"
+ENV CLEANUP_UNNECESSARY_FILES="/usr/lib/debug/usr/.dwz /etc/ssl/ct_log_list.cnf /etc/ssl/openssl.cnf /var/lib/gssproxy/default.sock"
 
 RUN set -x && \
     export OUTPUT_DEBUG_LOG=${OUTPUT_DEBUG_LOG} && \
